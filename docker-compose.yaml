@@ -1,0 +1,15 @@
+version: '3.6'
+services:
+  migration:
+    container_name: Migration
+    image: migration
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      output_net:
+    volumes:
+      - ${PWD}/migrations:/migrations
+networks:
+  output_net:
+    external: true
