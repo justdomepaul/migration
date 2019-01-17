@@ -7,4 +7,4 @@ RUN curl -L https://github.com/golang-migrate/migrate/releases/download/v4.2.2/m
 #RUN mv ./migrate.linux-amd64 migrate
 
 FROM base
-COPY --from=configure /migrate.linux-amd64 /migrate
+COPY --from=unzip /migrate.linux-amd64 /migrate
